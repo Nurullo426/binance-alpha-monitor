@@ -18,11 +18,8 @@ from threading import Thread
 from flask import Flask
 
 # --- НАСТРОЙКИ БОТА ---
-TELEGRAM_BOT_TOKEN = '7810292989:AAFKDPamp7LcDFaimnDHauP7g5SuQFReKLQ'
-TELEGRAM_CHAT_IDS = [
-    '2002273774',  # Ваш ID
-    '334157830'  # ID друга @RAskarovic
-]
+TELEGRAM_BOT_TOKEN = os.getenv("BOT_TOKEN")
+TELEGRAM_CHAT_IDS = os.getenv("CHAT_IDS").split(",")
 
 CHECK_URL = 'https://www.binance.com/ru/feed/alpha'
 CHECK_INTERVAL = 5  # Интервал проверки в секундах (быстро)
